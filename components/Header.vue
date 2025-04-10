@@ -1,5 +1,5 @@
 <template>
-    <header class="navbar bg-base-100 shadow-sm">
+    <header class="navbar fixed top-0 inset-x-0 z-40 bg-base-100 shadow-sm">
         <div class="navbar-start">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -11,7 +11,6 @@
                 </div>
                 <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                     <li><a href="#">Mi historia</a></li>
-                    <li><a href="#">Mi propósito</a></li>
                     <li><a href="#">Como te puedo ayudar</a>
                         <ul>
                             <li><a href="#">Persona</a></li>
@@ -41,6 +40,9 @@
                                 <li><a href="#">Programa de Coaching 1:1</a></li>
                                 <li><a href="#">Retiros</a></li>
                                 <li><a href="#">Talleres</a></li>
+                                <li>
+                                <button class="btn btn-primary" @click.prevent="store.setType('business')">Eres empresa?</button>
+                            </li>
                             </client-only>
 
                             <!-- Empresas -->
@@ -52,13 +54,16 @@
                                 <li><a href="#">Sesiones 1:1 Personalizadas</a></li>
                                 <li><a href="#">Recursos Digitales</a></li>
                                 <li><a href="#">Platagorma Tecnológica de Autogestión</a></li>
+                                <li>
+                                <button class="btn btn-primary" @click.prevent="store.setType('personal')">Eres persona?</button>
+                            </li>
                             </client-only>
                         </ul>
                     </details>
                 </li>
                 <li><a href="#">Conferencias</a></li>
                 <li><a href="#">Podcast</a></li>
-                <li><a href="#">Noticias y eventos</a></li>
+                <li><a href="#">Noticias</a></li>
             </ul>
         </div>
         <div class="navbar-end">

@@ -1,5 +1,5 @@
 <template>
-    <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <Transition enter-active-class="ease-out duration-300" enter-from-class="opacity-0" enter-to-class="opacity-100"
             leave-active-class="ease-in duration-200" leave-from-class="opacity-100" leave-to-class="opacity-0">
             <div class="fixed inset-0 bg-secondary transition-opacity" aria-hidden="true"></div>
@@ -16,13 +16,16 @@
                     style="background-image: url('https://coaching.thimpress.com/life-coaching/wp-content/uploads/sites/50/2024/03/bg-hero-section-02.jpg')">
 
                     <div class="max-w-2xl text-white">
-                        <h1 class="text-5xl font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                        <h1 class="text-5xl font-bold">It’s Time to start living your Dream life</h1>
                         <p class="py-6">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, praesentium. Error unde illum dicta quas aperiam similique eum cumque odit!
+                            My program helps women build a happy and rich life. Discover the potential within and unlock
+                            your own power!
                         </p>
                         <div class="space-x-6">
-                            <button class="btn btn-primary btn-lg" @click.prevent="store.setType('personal')">Persona</button>
-                            <button class="btn btn-primary btn-lg" @click.prevent="store.setType('business')">Empresa</button>
+                            <button class="btn btn-primary btn-lg"
+                                @click.prevent="store.setType('personal')">Persona</button>
+                            <button class="btn btn-primary btn-lg"
+                                @click.prevent="store.setType('business')">Empresa</button>
                         </div>
                     </div>
                 </div>
@@ -34,4 +37,8 @@
 
 <script setup>
 const store = useMainStore();
+
+onMounted(() => {
+    window.scrollTo(0, 0);
+});
 </script>

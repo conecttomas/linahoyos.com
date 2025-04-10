@@ -1,6 +1,7 @@
 <template>
     <div data-theme="base">
         <Onboarding v-if="store.type === null" />
+
         <div>
             <Header />
             <slot />
