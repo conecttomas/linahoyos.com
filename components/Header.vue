@@ -23,7 +23,8 @@
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </div>
-            <a class="btn btn-ghost text-xl"><span>Lina Hoyos</span> <small class="text-xs">[{{ store.type }}]</small></a>
+            <a class="btn btn-ghost text-xl"><span>Lina Hoyos</span> <small class="text-xs">[{{ store.type
+                    }}]</small></a>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
@@ -40,9 +41,10 @@
                                 <li><a href="#">Programa de Coaching 1:1</a></li>
                                 <li><a href="#">Retiros</a></li>
                                 <li><a href="#">Talleres</a></li>
-                                <li>
-                                <button class="btn btn-primary" @click.prevent="store.setType('business')">Eres empresa?</button>
-                            </li>
+                                <li class="mt-4">
+                                    <button class="btn btn-primary" @click.prevent="store.setType('business')">Eres
+                                        empresa?</button>
+                                </li>
                             </client-only>
 
                             <!-- Empresas -->
@@ -54,9 +56,10 @@
                                 <li><a href="#">Sesiones 1:1 Personalizadas</a></li>
                                 <li><a href="#">Recursos Digitales</a></li>
                                 <li><a href="#">Platagorma Tecnológica de Autogestión</a></li>
-                                <li>
-                                <button class="btn btn-primary" @click.prevent="store.setType('personal')">Eres persona?</button>
-                            </li>
+                                <li class="mt-4">
+                                    <button class="btn btn-primary" @click.prevent="store.setType('personal')">Eres
+                                        persona?</button>
+                                </li>
                             </client-only>
                         </ul>
                     </details>
