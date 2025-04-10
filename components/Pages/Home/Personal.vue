@@ -13,9 +13,9 @@
                             deserunt sunt.</p>
                         <div class="mt-10 flex items-center gap-x-6">
                             <a href="#"
-                                class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
-                                started</a>
-                            <a href="#" class="text-sm/6 font-semibold text-gray-900">Live demo <span
+                                class="btn btn-primary">
+                                Conoce más de mí</a>
+                            <a href="#" class="text-sm/6 font-semibold text-gray-900">¡Hablemos! <span
                                     aria-hidden="true">→</span></a>
                         </div>
                     </div>
@@ -66,6 +66,7 @@
                 </div>
             </div>
         </div>
+
         <div class="overflow-hidden bg-white py-24 sm:py-32">
             <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
                 <div class="max-w-4xl">
