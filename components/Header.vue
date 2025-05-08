@@ -1,80 +1,82 @@
 <template>
-    <header class="navbar fixed top-0 inset-x-0 z-40 bg-base-100 shadow-sm">
-        <div class="navbar-start">
-            <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h8m-8 6h16" />
+    <header class="bg-transparent absolute insect-x-0 top-12 w-screen z-30">
+        <nav class="mx-auto flex container items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Lina Hoyos</span>
+                <img class="h-12 w-auto" src="/logotipo-h.svg" alt="">
+            </a>
+            <div class="flex lg:hidden">
+                <button type="button"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
-                </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                    <li><a href="#">Mi historia</a></li>
-                    <li><a href="#">Como te puedo ayudar</a>
-                        <ul>
-                            <li><a href="#">Persona</a></li>
-                            <li><a href="#">Empresa</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Conferencias</a></li>
-                    <li><a href="#">Podcast</a></li>
-                    <li><a href="#">Noticias y eventos</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
+                </button>
             </div>
-            <a class="btn btn-ghost text-xl"><span>Lina Hoyos</span> <small class="text-xs">[{{ store.type
-                    }}]</small></a>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
-                <li><a href="#">Mi historia</a></li>
-                <li><a href="#">Mi propósito</a></li>
-                <li>
-                    <details>
-                        <summary>Como te puedo ayudar</summary>
-                        <ul class="p-2">
-                            <!-- Personal -->
-                            <client-only v-if="store.type === 'personal'">
-                                <li><a href="#">Mentoría P.A.T.H.</a></li>
-                                <li><a href="#">Programa de Autoliderazo Consciente</a></li>
-                                <li><a href="#">Programa de Coaching 1:1</a></li>
-                                <li><a href="#">Retiros</a></li>
-                                <li><a href="#">Talleres</a></li>
-                                <li class="mt-4">
-                                    <button class="btn btn-primary" @click.prevent="store.setType('business')">Eres
-                                        empresa?</button>
-                                </li>
-                            </client-only>
+            <div class="hidden lg:flex lg:gap-x-12 items-center">
+                <a href="#" class="text-base font-normal text-white">Sobre mí</a>
+                <a href="#" class="text-base font-normal text-white">Como te puedo acompañar</a>
+                <a href="#" class="text-base font-normal text-white">Conferencias</a>
+                <a href="#" class="text-base font-normal text-white">Podcast</a>
 
-                            <!-- Empresas -->
-                            <client-only v-if="store.type === 'business'">
-                                <li><a href="#">Mentoría B-PATH</a></li>
-                                <li><a href="#">Cursos para Equipos</a></li>
-                                <li><a href="#">Talleres de Estrategia y Liderazgo Consciente</a></li>
-                                <li><a href="#">Bootcamp de Estrategia y Liderazgo</a></li>
-                                <li><a href="#">Sesiones 1:1 Personalizadas</a></li>
-                                <li><a href="#">Recursos Digitales</a></li>
-                                <li><a href="#">Platagorma Tecnológica de Autogestión</a></li>
-                                <li class="mt-4">
-                                    <button class="btn btn-primary" @click.prevent="store.setType('personal')">Eres
-                                        persona?</button>
-                                </li>
-                            </client-only>
-                        </ul>
-                    </details>
-                </li>
-                <li><a href="#">Conferencias</a></li>
-                <li><a href="#">Podcast</a></li>
-                <li><a href="#">Noticias</a></li>
-            </ul>
-        </div>
-        <div class="navbar-end">
-            <a class="btn">Contacto</a>
+
+
+                <button type="button"
+                    class="rounded-lg bg-accent-2 px-4 py-2.5 text-base font-semibold text-primary shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
+                    Contáctame
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div class="lg:hidden hidden" role="dialog" aria-modal="true">
+            <!-- Background backdrop, show/hide based on slide-over state. -->
+            <div class="fixed inset-0 z-10"></div>
+            <div
+                class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div class="flex items-center justify-between">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Your Company</span>
+                        <img class="h-8 w-auto"
+                            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                    </a>
+                    <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Close menu</span>
+                        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true" data-slot="icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Product</a>
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Features</a>
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Marketplace</a>
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Company</a>
+                        </div>
+                        <div class="py-6">
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log
+                                in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
+
 </template>
 
 <script setup>
-const store = useMainStore();
+
 </script>
+
+<style lang="scss" scoped></style>
