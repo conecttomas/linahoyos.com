@@ -15,7 +15,7 @@ const more = ref(false)
             class="relative z-10 mx-auto px-4 pt-10 pb-4 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-primary-200 lg:px-8 lg:py-12 xl:px-12">
 
             <NuxtLink to="/" class="mb-10 block text-primary">
-                <Logo />
+                <Logo class="h-8 md:h-14" />
             </NuxtLink>
 
             <NuxtLink to="/podcast"

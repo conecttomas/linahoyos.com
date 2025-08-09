@@ -1,4 +1,7 @@
 <script setup>
+const route = useRoute();
+const isHome = computed(() => route.name === 'index')
+
 let offsetTop = ref(0)
 onMounted(() => {
     window.addEventListener('scroll', () => {
@@ -19,18 +22,18 @@ const menu = [
 <template>
     <header :class="[
         'bg-transparent fixed insect-x-0 top-0 w-full z-30 transition-all duration-300 ease-in-out',
-        { 'bg-transparent py-14 px-8': offsetTop === 0 },
-        { 'bg-white shadow-md shadow-primary/5 px-5 py-8': offsetTop > 0 },
+        { 'bg-transparent py-14 px-8': offsetTop === 0 && isHome },
+        { 'bg-white shadow-md shadow-primary/5 px-5 py-8': offsetTop > 0 || !isHome },
     ]" v-motion-fadein-once>
-        <nav class="mx-auto flex container items-center justify-between" aria-label="Global">
-            <a href="#" class="-m-1.5 p-1.5">
+        <nav class="mx-auto flex container items-center justify-between" aria-label="">
+            <NuxtLink to="/" class="-m-1.5 p-1.5">
                 <span class="sr-only">Lina Hoyos</span>
                 <Logo :class="[
                     'h-8 md:h-14',
-                    { 'text-white': offsetTop === 0 },
-                    { 'text-primary': offsetTop > 0 },
+                    { 'text-white': offsetTop === 0 && isHome },
+                    { 'text-primary': offsetTop > 0 || !isHome },
                 ]" />
-            </a>
+            </NuxtLink>
             <div class="flex lg:hidden">
                 <button type="button"
                     class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
@@ -45,8 +48,8 @@ const menu = [
             <div class="hidden lg:flex lg:gap-x-12 items-center">
                 <NuxtLink :to="item?.hash" v-for="(item, index) in menu" :key="index" :class="[
                     'text-base font-normal',
-                    { 'text-white': offsetTop === 0 },
-                    { 'text-primary': offsetTop > 0 },
+                    { 'text-white': offsetTop === 0 && isHome },
+                    { 'text-primary': offsetTop > 0 || !isHome },
                 ]">{{ item?.label }}</NuxtLink>
 
                 <NuxtLink to="contacto"
