@@ -1,9 +1,35 @@
+<script setup>
+let offsetTop = ref(0)
+onMounted(() => {
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        offsetTop.value = currentScroll;
+    });
+});
+
+const menu = [
+    { label: "Sobre mí", hash: "/sobre-mi" },
+    { label: "Como te puedo acompañar", hash: "/acompañamiento" },
+    { label: "Conferencias", hash: "/conferencias" },
+    { label: "Podcast", hash: "/podcast" }
+]
+</script>
+
 <template>
-    <header class="bg-transparent absolute insect-x-0 top-12 w-screen z-30" v-motion-fadein-once>
-        <nav class="mx-auto flex container items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header :class="[
+        'bg-transparent fixed insect-x-0 top-0 w-full z-30 transition-all duration-300 ease-in-out',
+        { 'bg-transparent py-14 px-8': offsetTop === 0 },
+        { 'bg-white shadow-md shadow-primary/5 px-5 py-8': offsetTop > 0 },
+    ]" v-motion-fadein-once>
+        <nav class="mx-auto flex container items-center justify-between" aria-label="Global">
             <a href="#" class="-m-1.5 p-1.5">
                 <span class="sr-only">Lina Hoyos</span>
-                <img class="h-12 w-auto" src="/logotipo-h.svg" alt="">
+                <Logo :class="[
+                    'h-8 md:h-14',
+                    { 'text-white': offsetTop === 0 },
+                    { 'text-primary': offsetTop > 0 },
+                ]" />
             </a>
             <div class="flex lg:hidden">
                 <button type="button"
@@ -17,17 +43,16 @@
                 </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-12 items-center">
-                <a href="#" class="text-base font-normal text-white">Sobre mí</a>
-                <a href="#" class="text-base font-normal text-white">Como te puedo acompañar</a>
-                <a href="#" class="text-base font-normal text-white">Conferencias</a>
-                <a href="#" class="text-base font-normal text-white">Podcast</a>
+                <NuxtLink :to="item?.hash" v-for="(item, index) in menu" :key="index" :class="[
+                    'text-base font-normal',
+                    { 'text-white': offsetTop === 0 },
+                    { 'text-primary': offsetTop > 0 },
+                ]">{{ item?.label }}</NuxtLink>
 
-
-
-                <button type="button"
+                <NuxtLink to="contacto"
                     class="rounded-lg bg-accent-2 px-4 py-2.5 text-base font-semibold text-primary shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">
                     Contáctame
-                </button>
+                </NuxtLink>
             </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
@@ -73,9 +98,3 @@
         </div>
     </header>
 </template>
-
-<script setup>
-
-</script>
-
-<style lang="scss" scoped></style>

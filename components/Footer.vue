@@ -1,78 +1,81 @@
 <template>
-    <footer class="bg-primary container rounded-t-3xl mx-auto relative">
-        <div class="mx-auto max-w-7xl px-6 pt-20 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
-            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-                <div class="grid grid-cols-2 gap-8 xl:col-span-2">
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 class="text-sm/6 font-semibold text-white">Acompañamiento</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li>
-                                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Mentoría P.A.T.H.</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Autoliderazgo conciente</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Coaching 1:1</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Retiros</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Talleres</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="text-sm/6 font-semibold text-white">Utilidad</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li>
-                                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Conferencias</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Podcast</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Contacto</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 class="text-sm/6 font-semibold text-white">Legal</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li>
-                                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Términos y
-                                        condiciones</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Políticas de
-                                        privacidad</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-sm/6 text-gray-400 hover:text-white">Licencias</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-10 xl:mt-0">
-                    <h3 class="text-sm/6 font-semibold text-white">Suscríbase a mi boletin</h3>
-                    <p class="mt-2 text-sm/6 text-gray-300">Las últimas noticias, artículos y recursos, enviados a su
+    <footer class="bg-primary mx-auto relative">
+        <div class="mx-auto max-w-7xl px-6 py-8 lg:px-8 ">
+            <div class="xl:grid xl:grid-cols-5 xl:gap-32 mt-16">
+                <div class="mt-10 xl:mt-0 xl:col-span-2">
+                    <Logo class="text-white h-16" />
+                    <h3 class="text-xl font-semibold text-white mt-16">Suscríbase a mi boletin</h3>
+                    <p class="mt-2 text-base text-gray-300">Las últimas noticias, artículos y recursos, enviados a su
                         bandeja de entrada
                         mensual.</p>
                     <form class="mt-6 sm:flex sm:max-w-md">
                         <label for="email-address" class="sr-only">Correo electrónico</label>
                         <input type="email" name="email-address" id="email-address" autocomplete="email" required
-                            class="w-full min-w-0 rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-secondary sm:w-64 sm:text-sm/6 xl:w-full"
+                            class="w-full min-w-0 rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-secondary placeholder:text-secondary focus:outline-2 focus:-outline-offset-2 focus:outline-secondary sm:w-64 sm:text-base xl:w-full"
                             placeholder="Ingrese su correo electrónico">
                         <div class="mt-4 sm:mt-0 sm:ml-4 sm:shrink-0">
                             <button type="submit"
                                 class="flex w-full items-center justify-center rounded-md bg-accent-3 px-3 py-2 text-sm font-semibold text-primary shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary">Subscribe</button>
                         </div>
                     </form>
+                </div>
+
+                <div class="grid grid-cols-2 gap-8 xl:col-span-3">
+                    <div class="md:grid md:grid-cols-2 md:gap-24">
+                        <div>
+                            <h3 class="text-base font-semibold text-white">Acompañamiento</h3>
+                            <ul role="list" class="mt-6 space-y-4">
+                                <li>
+                                    <a href="#" class="text-sm text-gray-400 hover:text-white">Mentoría P.A.T.H.</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-sm text-gray-400 hover:text-white">Autoliderazgo
+                                        conciente</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-sm text-gray-400 hover:text-white">Coaching 1:1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-sm text-gray-400 hover:text-white">Retiros</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-sm text-gray-400 hover:text-white">Talleres</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-semibold text-white">Utilidad</h3>
+                            <ul role="list" class="mt-6 space-y-4">
+                                <li>
+                                    <a href="#" class="text-sm text-gray-400 hover:text-white">Conferencias</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-sm text-gray-400 hover:text-white">Podcast</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-sm text-gray-400 hover:text-white">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:grid md:gap-8">
+                        <div>
+                            <h3 class="text-base font-semibold text-white">Legal</h3>
+                            <ul role="list" class="mt-6 space-y-4">
+                                <li>
+                                    <a href="#" class="text-sm text-gray-400 hover:text-white">Términos y
+                                        condiciones</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-sm text-gray-400 hover:text-white">Políticas de
+                                        privacidad</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-sm text-gray-400 hover:text-white">Licencias</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -111,7 +114,7 @@
                         </svg>
                     </a>
                 </div>
-                <p class="mt-8 text-sm/6 text-gray-400 md:order-1 md:mt-0">&copy; 2025 Lina Hoyos. Todos los derechos
+                <p class="mt-8 text-base text-gray-400 md:order-1 md:mt-0">&copy; 2025 Lina Hoyos. Todos los derechos
                     reservados.</p>
             </div>
         </div>

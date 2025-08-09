@@ -61,5 +61,5 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@pinia/nuxt", "@vueuse/motion/nuxt"],
+  modules: ["@pinia/nuxt", "@vueuse/motion/nuxt", "vue3-carousel-nuxt"],
 });
