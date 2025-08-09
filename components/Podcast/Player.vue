@@ -17,14 +17,14 @@ const episode = computed(() => store?.episodies[store?.current]);
                         </path>
                     </svg>
                 </button></div>
-            <div class="mb-[env(safe-area-inset-bottom)] flex flex-1 flex-col gap-3 overflow-hidden p-1"><a
-                    class="truncate text-center text-sm/6 font-bold md:text-left" title="1: Skeletor"
+            <div class="mb-[env(safe-area-inset-bottom)] flex flex-1 flex-col gap-3 overflow-hidden p-1">
+                <NuxtLink class="truncate text-center text-base font-bold md:text-left text-primary-900" :title="episode?.title"
                     :to="`/podcast/${episode?.slug}`">
                     {{ episode?.title }}
-                </a>
+                </NuxtLink>
                 <audio id="player" :src="episode?.mp3" controls autoplay class="w-0 h-0" />
                 <div class="flex justify-between gap-6">
-                    <div class="flex items-center md:hidden"><button type="button" 
+                    <div class="flex items-center md:hidden"><button type="button"
                             class="group relative rounded-md hover:bg-primary-100 focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:outline-hidden md:order-0"
                             aria-label="Mute">
                             <div class="absolute -inset-4 md:hidden"></div><svg aria-hidden="true" viewBox="0 0 24 24"

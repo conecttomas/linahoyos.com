@@ -25,7 +25,7 @@ export default defineNuxtConfig({
               opacity: 1,
               transition: {
                 duration: 1000,
-                delay: 200,
+                delay: 0,
               },
             },
           },

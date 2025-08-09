@@ -51,6 +51,10 @@
     --font-sans: "Open Sans", serif;
 }
 
+:root {
+        scroll-padding-top: 100px;
+    }
+
 html {
     @apply overflow-x-hidden scroll-smooth;
 }
